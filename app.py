@@ -46,12 +46,11 @@ def index():
     # Return the predictions as a JSON response
     result = {class_labels[i]: float(predictions[0][i]) for i in range(len(class_labels)) if float(predictions[0][i]) > 0.5}
     
-    response = {"prediction": result}
     
     if len(result) == 0:
         abort(400, 'Model cannot classify the image properly.')
         
-    return jsonify(response)
+    return jsonify(result)
 
 # Run the Flask application
 if __name__ == '__main__':
