@@ -54,4 +54,4 @@ def index():
 # Run the Flask application
 if __name__ == '__main__':
     DEBUG_MODE = False if os.environ.get("PRODUCTION") =="false" else "true"
-    app.run(debug=DEBUG_MODE, host='0.0.0.0', port=3000)
+    app.run(debug=DEBUG_MODE, host='0.0.0.0', port=8080)
