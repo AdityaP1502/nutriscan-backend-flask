@@ -46,12 +46,14 @@ def index():
     # Return the predictions as a JSON response
     result = {class_labels[i]: float(predictions[0][i]) for i in range(len(class_labels)) if float(predictions[0][i]) > 0.5}
     
+    response = {"prediction": result}
+    
     if len(result) == 0:
         abort(400, 'Model cannot classify the image properly.')
         
-    return jsonify(result)
+    return jsonify(response)
 
 # Run the Flask application
 if __name__ == '__main__':
-    DEBUG_MODE = False if os.environ.get("PRODUCTION") =="false" else "true"
+    DEBUG_MODE = False if os.environ.get("PRODUCTION") == "false" else "true"
     app.run(debug=DEBUG_MODE, host='0.0.0.0', port=8080)
