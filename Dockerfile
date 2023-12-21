@@ -1,5 +1,5 @@
 # Use an official TensorFlow runtime as a parent image
-FROM tensorflow/tensorflow:latest
+FROM python:3.10-slim
 
 # Set the working directory to /app
 WORKDIR /app
@@ -18,4 +18,4 @@ ENV TF_MODEL tf-model/model.h5
 ENV PRODUCTION true
 
 # Run app.py when the container launches
-CMD ["gunicorn", "-w", "1", "-b", "0.0.0.0:8080", "app:app"]
+CMD ["gunicorn", "-w", "1", "0.0.0.0:8080", "app:app"]
