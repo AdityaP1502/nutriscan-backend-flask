@@ -1,0 +1,5 @@
+# virtual environment package
+env
+
+# model
+*.h5
