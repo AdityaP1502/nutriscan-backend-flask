@@ -6,17 +6,24 @@ Endpoint for predictions
 ```shell
 docker login
 ```
-2. Get the model
+2. Clone the repo
+```shell
+git clone https://github.com/AdityaP1502/nutriscan-backend-flask
+cd nutriscan-backend-flask
 ```
-mkdir tf-model; wget https://storage.googleapis.com/nutriscan-capstone/model.h5 -p tf-model/
+
+3. Get the model
+```shell
+mkdir tf-model
+wget https://storage.googleapis.com/nutriscan-capstone/model.h5 -p tf-model/
 ``` 
 
-3. Build the container
+4. Build the container
 ```shell
 docker build -t ml-endpoint:latest .
 ```
 
-4. Run the container
+5. Run the container
 ```shell
 docker run -p [HOST PORT]:3000 -d ml-endpoint:latest
 ```
