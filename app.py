@@ -26,9 +26,9 @@ def preprocess_image(img_path, target_size=(224, 224)):
 @app.route('/predict', methods=['POST'])
 def index():
     class_labels = [
-        'Baked Potato', 'Burger', 'Donut', 
-        'Fries', 'Hot Dog', 'Pizza', 
-        'Sandwich', 'Taco', 'Taquito'
+        'Baked Potato', 'Burger', 'Taquito', 
+        'Donut', 'Fries', 'Hot Dog', 
+        'Pizza', 'Sandwitch', 'Taco'
     ]
     
     # Get the uploaded image file
