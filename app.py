@@ -48,7 +48,7 @@ def index():
     
     
     if len(result) == 0:
-        abort(400, 'Model cannot classify the image properly.')
+        return jsonify({"status":"fail", "message":"Model cannot predict image with confident"}), 400
         
     return jsonify(result)
 
